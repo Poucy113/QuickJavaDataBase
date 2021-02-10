@@ -1,6 +1,5 @@
 package lu.poucy.qjdb.requests;
 
-import java.sql.SQLException;
 import java.util.HashMap;
 
 import lu.poucy.qjdb.DataBase;
@@ -17,8 +16,8 @@ public class DBInsertRequest extends DBRequest {
 	}
 
 	@Override
-	public DBRequestResult execute(DataBase sqlDataBase) throws SQLException {
-		return new DBInsertRequestResult(sqlDataBase.getLines().add(to));
+	public DBRequestResult execute(DataBase db) {
+		return new DBInsertRequestResult(db.getLines().add(to));
 	}
 
 }

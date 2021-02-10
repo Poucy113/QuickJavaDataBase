@@ -1,6 +1,5 @@
 package lu.poucy.qjdb.requests;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -20,12 +19,12 @@ public class DBDeleteRequest extends DBRequest {
 	}
 
 	@Override
-	public DBRequestResult execute(DataBase sqlDataBase) throws SQLException {
+	public DBRequestResult execute(DataBase db) {
 		List<HashMap<String, Object>> removed = new ArrayList<>();
-		for(HashMap<String, Object> o : sqlDataBase.getLines())
+		for(HashMap<String, Object> o : db.getLines())
 			if(Condition.conditions(conditions, o))
 				removed.add(o);
-		sqlDataBase.getLines().removeAll(removed);
+		db.getLines().removeAll(removed);
 		return new DBDeleteRequestResult(removed);
 	}
 

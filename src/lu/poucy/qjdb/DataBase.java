@@ -4,7 +4,6 @@ import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -38,7 +37,7 @@ public class DataBase {
 		this.name = name;
 	}
 	
-	public DBRequestResult request(DBRequest s) throws SQLException {return s.execute(this);}
+	public DBRequestResult request(DBRequest s) {return s.execute(this);}
 	
 	private void realSave(File file) throws IOException {
 		JSONObject obj = new JSONObject();

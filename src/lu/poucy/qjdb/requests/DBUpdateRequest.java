@@ -1,6 +1,5 @@
 package lu.poucy.qjdb.requests;
 
-import java.sql.SQLException;
 import java.util.HashMap;
 
 import lu.poucy.qjdb.Colum;
@@ -23,8 +22,8 @@ public class DBUpdateRequest extends DBRequest {
 	}
 
 	@Override
-	public DBRequestResult execute(DataBase sqlDataBase) throws SQLException {
-		for(HashMap<String, Object> so : sqlDataBase.getLines())
+	public DBRequestResult execute(DataBase db) {
+		for(HashMap<String, Object> so : db.getLines())
 			if(Condition.conditions(conditions, so))
 				for(int i = 0; i < colums.length; i++)
 					so.replace(colums[i].getName(), replace[i]);

@@ -1,6 +1,5 @@
 package lu.poucy.qjdb.requests;
 
-import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
@@ -25,10 +24,10 @@ public class DBSelectRequest extends DBRequest {
 	}
 
 	@Override
-	public DBRequestResult execute(DataBase sqlDataBase) throws SQLException {
+	public DBRequestResult execute(DataBase db) {
 		DBRequestResult ret = null;
 		List<HashMap<String, Object>> r = new ArrayList<>();
-		for(HashMap<String, Object> h : sqlDataBase.getLines())
+		for(HashMap<String, Object> h : db.getLines())
 			if(Condition.conditions(conditions, h)) {
 				HashMap<String, Object> o = new HashMap<>();
 				for(String s : h.keySet())
