@@ -1,4 +1,4 @@
-package lu.poucy.sqldb;
+package lu.poucy.qjdb;
 
 import java.io.File;
 import java.io.IOException;
@@ -13,8 +13,8 @@ import java.util.function.Consumer;
 import org.json.JSONArray;
 import org.json.JSONObject;
 
-import lu.poucy.sqldb.requests.DBRequest;
-import lu.poucy.sqldb.results.DBRequestResult;
+import lu.poucy.qjdb.requests.DBRequest;
+import lu.poucy.qjdb.results.DBRequestResult;
 
 public class DataBase {
 	

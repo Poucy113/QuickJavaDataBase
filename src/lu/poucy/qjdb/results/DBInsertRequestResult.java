@@ -1,4 +1,4 @@
-package lu.poucy.sqldb.results;
+package lu.poucy.qjdb.results;
 
 public class DBInsertRequestResult implements DBRequestResult {
 

@@ -1,11 +1,11 @@
-package lu.poucy.sqldb.requests;
+package lu.poucy.qjdb.requests;
 
 import java.sql.SQLException;
 import java.util.HashMap;
 
-import lu.poucy.sqldb.DataBase;
-import lu.poucy.sqldb.results.DBRequestResult;
-import lu.poucy.sqldb.results.DBInsertRequestResult;
+import lu.poucy.qjdb.DataBase;
+import lu.poucy.qjdb.results.DBInsertRequestResult;
+import lu.poucy.qjdb.results.DBRequestResult;
 
 public class DBInsertRequest extends DBRequest {
 

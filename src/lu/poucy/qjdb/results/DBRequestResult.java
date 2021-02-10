@@ -1,3 +1,3 @@
-package lu.poucy.sqldb.results;
+package lu.poucy.qjdb.results;
 
 public interface DBRequestResult {}

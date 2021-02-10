@@ -1,9 +1,9 @@
-package lu.poucy.sqldb.requests;
+package lu.poucy.qjdb.requests;
 
 import java.sql.SQLException;
 
-import lu.poucy.sqldb.DataBase;
-import lu.poucy.sqldb.results.DBRequestResult;
+import lu.poucy.qjdb.DataBase;
+import lu.poucy.qjdb.results.DBRequestResult;
 
 public abstract class DBRequest {
 

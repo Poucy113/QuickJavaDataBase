@@ -1,13 +1,13 @@
-package lu.poucy.sqldb.requests;
+package lu.poucy.qjdb.requests;
 
 import java.sql.SQLException;
 import java.util.HashMap;
 
-import lu.poucy.sqldb.Colum;
-import lu.poucy.sqldb.Condition;
-import lu.poucy.sqldb.DataBase;
-import lu.poucy.sqldb.results.DBRequestResult;
-import lu.poucy.sqldb.results.DBUpdateRequestResult;
+import lu.poucy.qjdb.Colum;
+import lu.poucy.qjdb.Condition;
+import lu.poucy.qjdb.DataBase;
+import lu.poucy.qjdb.results.DBRequestResult;
+import lu.poucy.qjdb.results.DBUpdateRequestResult;
 
 public class DBUpdateRequest extends DBRequest {
 

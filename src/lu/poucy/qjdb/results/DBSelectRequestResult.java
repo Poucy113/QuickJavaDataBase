@@ -1,4 +1,4 @@
-package lu.poucy.sqldb.results;
+package lu.poucy.qjdb.results;
 
 import java.util.HashMap;
 import java.util.List;

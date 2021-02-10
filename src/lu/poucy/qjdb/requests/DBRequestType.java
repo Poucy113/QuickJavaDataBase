@@ -1,4 +1,4 @@
-package lu.poucy.sqldb.requests;
+package lu.poucy.qjdb.requests;
 
 public enum DBRequestType {
 

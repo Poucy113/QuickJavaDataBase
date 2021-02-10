@@ -1,4 +1,4 @@
-package lu.poucy.sqldb;
+package lu.poucy.qjdb;
 
 import java.util.HashMap;
 
