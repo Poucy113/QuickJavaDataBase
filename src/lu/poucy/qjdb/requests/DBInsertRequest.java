@@ -1,6 +1,8 @@
 package lu.poucy.qjdb.requests;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 
 import lu.poucy.qjdb.DataBase;
 import lu.poucy.qjdb.results.DBInsertRequestResult;
@@ -17,7 +19,9 @@ public class DBInsertRequest extends DBRequest {
 
 	@Override
 	public DBRequestResult execute(DataBase db) {
-		return new DBInsertRequestResult(db.getLines().add(to));
+		List<HashMap<String, Object>> ml = new ArrayList<>(db.getLines());
+		ml.add(to);
+		return new DBInsertRequestResult(db.setLines(ml));
 	}
 
 }

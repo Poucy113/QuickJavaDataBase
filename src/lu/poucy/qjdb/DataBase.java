@@ -1,5 +1,6 @@
 package lu.poucy.qjdb;
 
+import java.io.Closeable;
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
@@ -15,7 +16,9 @@ import org.json.JSONObject;
 import lu.poucy.qjdb.requests.DBRequest;
 import lu.poucy.qjdb.results.DBRequestResult;
 
-public class DataBase {
+public class DataBase implements Closeable {
+	
+	private boolean isClosed = false;
 	
 	private String name = "Poucy-DataBase";
 	private File file;
@@ -60,7 +63,7 @@ public class DataBase {
 		Files.write(Paths.get(file.getPath()),obj.toString().getBytes());
 	}
 	private void realLoad(File file) throws IOException {
-		Files.readString(Paths.get(file.getPath()));
+		Files.readAllBytes(Paths.get(file.getPath()));
 		JSONObject obj = new JSONObject(new String(Files.readAllBytes(Paths.get(file.getPath()))));
 		this.name = obj.getString("name");
 		for(String c : obj.getString("column").split(";"))
@@ -73,6 +76,7 @@ public class DataBase {
 				l.put(s, o.get(s));
 			lines.add(l);
 		}
+		isClosed = false;
 	}
 	
 	public Thread save(Consumer<Exception> ex) {
@@ -104,5 +108,17 @@ public class DataBase {
 	public List<HashMap<String, Object>> getLines() {return lines;}
 	public String getName() {return name;}
 	public void setName(String name) {this.name = name;}
+	public List<HashMap<String, Object>> setLines(List<HashMap<String, Object>> ml) {
+		this.lines = ml;
+		return this.getLines();
+	}
+	@Override
+	public void close() throws IOException {
+		column.clear();
+		lines.clear();
+		isClosed = true;
+	}
+	
+	public boolean isClosed() {return isClosed;}
 	
 }

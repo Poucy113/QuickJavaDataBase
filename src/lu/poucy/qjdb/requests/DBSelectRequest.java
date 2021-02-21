@@ -25,7 +25,7 @@ public class DBSelectRequest extends DBRequest {
 
 	@Override
 	public DBRequestResult execute(DataBase db) {
-		DBRequestResult ret = null;
+		DBSelectRequestResult ret = null;
 		List<HashMap<String, Object>> r = new ArrayList<>();
 		for(HashMap<String, Object> h : db.getLines())
 			if(Condition.conditions(conditions, h)) {
